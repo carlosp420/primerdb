@@ -22,7 +22,7 @@ class PrimersController extends AppController {
 	public function add() {
 		if( $this->request->is('post') ) {
 			$this->Primer->create();
-			if( $this->Primer->save($this->request_data) ) {
+			if( $this->Primer->save($this->request->data) ) {
 				$this->Session->setFlash(__('Your primer has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			}
