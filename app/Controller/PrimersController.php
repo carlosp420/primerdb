@@ -25,10 +25,10 @@ class PrimersController extends AppController {
 		if( $this->request->is('post') ) {
 			$this->Primer->create();
 			if( $this->Primer->save($this->request->data) ) {
-				$this->Session->setFlash('Your primer has been saved.', 'info');
+				$this->Session->setFlash('Your primer has been saved.', 'success');
 				return $this->redirect(array('action' => 'index'));
 			}
-			$this->Session->setFlash(__('Unable to add your primer.'));
+			$this->Session->setFlash('Unable to add your primer.', 'error');
 		}
 	}
 
@@ -45,10 +45,10 @@ class PrimersController extends AppController {
 		if( $this->request->is('post') || $this->request->is('put')) {
 			$this->Primer->id = $id;
 			if( $this->Primer->save($this->request->data)) {
-				$this->Session->setFlash(__('Your primer has been updated.'));
+				$this->Session->setFlash('Your primer has been updated.', 'success');
 				return $this->redirect(array('action' => 'index'));
 			}
-			$this->Session->setFlash(__('Unable to update your post.'));
+			$this->Session->setFlash('Unable to update your primer.', 'error');
 		}
 
 		if( !$this->request->data ) {
@@ -62,7 +62,7 @@ class PrimersController extends AppController {
 		}
 
 		if( $this->Primer->delete($id) ) {
-			$this->Session->setFlash(__('The primer with %s has been deleted.', h($id)));
+			$this->Session->setFlash('The primer ' . h($id) . ' has been deleted.', 'info');
 			return $this->redirect(array('action' => 'index'));
 		}
 	}
