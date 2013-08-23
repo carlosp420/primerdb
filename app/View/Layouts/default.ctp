@@ -1,62 +1,80 @@
-<?php
-/**
- *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-?>
 <!DOCTYPE html>
 <html>
 <head>
-	<?php echo $this->Html->charset(); ?>
-	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
-	</title>
-	<?php
-		echo $this->Html->meta('icon');
+	<?php echo $this->Html->charset(). "\n\t"; ?>
+	<title>Primers Database: <?php echo $title_for_layout; ?></title>
 
-		echo $this->Html->css('cake.generic');
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le styles -->
+	<?php
+		echo $this->Html->css('bootstrap.min'). "\n\t";
+        echo "<style type='text/css'>
+                    body {
+                        padding-top: 60px;
+                        padding-bottom: 40px;
+                        }
+        </style>\n\t";
+
+		echo $this->Html->css('bootstrap-responsive.min'). "\n\n\t";
+
+		echo $this->Html->meta('icon') . "\n\t";
 
 		echo $this->fetch('meta');
-		echo $this->fetch('css');
-		echo $this->fetch('script');
+
+		echo $this->Html->css('core'). "\n\t";
+
+		echo $this->fetch('css'). "\n\t";
+
+		echo $this->Html->script('libs/jquery'). "\n\t";
+		echo $this->Html->script('libs/bootstrap.min'). "\n\t";
+
+		echo $this->fetch('script'). "\n\t";
 	?>
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="index.php">Primerdb</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+	<div class="container">
+
+    <div class="hero-unit">
+        <h1>Primerdb</h1>
+        <p>on primers and amplicons...</p>
+
+        <p>
+            <a class="btn btn-primary btn-large" href="primers">primers</a>
+            <a class="btn btn-primary btn-large" href="amplicons">amplicons</a>
+        </p>
+    </div>
+
+		<div id="header" class="container">
+			<h1>Primerdb</h1>
 		</div>
-		<div id="content">
+
+		<div id="content" class="container">
 
 			<?php echo $this->Session->flash(); ?>
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>
