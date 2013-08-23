@@ -54,5 +54,16 @@ class PrimersController extends AppController {
 		}
 	}
 
+	public function delete($id) {
+		if( $this->request->is('get')) {
+			throw new MethodNotAllowedException();
+		}
+
+		if( $this->Primer->delete($id) ) {
+			$this->Session->setFlash(__('The primer with %s has been deleted.', h($id)));
+			return $this->redirect(array('action' => 'index'));
+		}
+	}
+
 }
 ?>

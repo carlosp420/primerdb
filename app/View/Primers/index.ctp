@@ -25,6 +25,8 @@
 			<?php 
 				echo $this->Html->link($primer['Primer']['primer_name'], array('controller' => 'primers', 'action' => 'view', $primer['Primer']['id'])); 
 				echo " " . $this->Html->link('[edit]', array('action' => 'edit', $primer['Primer']['id']));
+				echo " " . $this->Form->postLink('[delete]', array('action' => 'delete', $primer['Primer']['id']),
+															 array('confirm' => 'Are you sure you want to delete?')	);
 			?> 
 		</td>
 		<td> <?php echo $primer['Primer']['forward_or_reverse']; ?></td>
