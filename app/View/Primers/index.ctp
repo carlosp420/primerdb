@@ -1,4 +1,10 @@
 <h1>Primers</h1>
+
+<?php
+	echo $this->Html->link('Add Primer', array('controller' => 'primers',
+												'action' => 'add'));
+?>
+
 <table>
     <tr>
         <th>Primer Id</th>
