@@ -1,7 +1,8 @@
-Some ideas, anything else come to mind?
+# Some ideas, anything else come to mind?
 
-Primer table
+## Primer table
 
+```
 id -> number
 gene_code -> eg COI
 primer_name -> primer name (eg LCO)
@@ -13,9 +14,11 @@ date_creation ->
 date_modification ->
 timestamp ->
 notes ->
+```
 
-Amplicon table
+## Amplicon table
 
+```
 id? -> number
 gene_code -> eg COI
 amplicon_name -> eg COI-begin, could also be id?
@@ -29,5 +32,6 @@ notes -> details about what was tried
 date_creation ->
 date_modification ->
 timestamp ->
+```
 
 
