@@ -2,7 +2,7 @@
 
 <?php
 	echo $this->Html->link('Add Primer', array('controller' => 'primers',
-												'action' => 'add'));
+                                                             'action' => 'add'  ));
 ?>
 
 <table class="table table-striped table-bordered">
@@ -24,9 +24,12 @@
         <td> 
 			<?php 
 				echo $this->Html->link($primer['Primer']['primer_name'], array('controller' => 'primers', 'action' => 'view', $primer['Primer']['id'])); 
-				echo " " . $this->Html->link('[edit]', array('action' => 'edit', $primer['Primer']['id']));
-				echo " " . $this->Form->postLink('[delete]', array('action' => 'delete', $primer['Primer']['id']),
-															 array('confirm' => 'Are you sure you want to delete?')	);
+                echo "";
+				echo " " . $this->Html->link('',     array('action' => 'edit',   $primer['Primer']['id']), array('class' => 'icon-edit', 'title' => 'edit'));
+                echo " " . $this->Form->postLink('', 
+                                                     array('action' => 'delete', $primer['Primer']['id']), 
+                                                     array('class' => 'icon-remove', 'title' => 'remove', 'confirm' => 'Are you sure you want to delete?')
+                                                 );
 			?> 
 		</td>
 		<td> <?php echo $primer['Primer']['forward_or_reverse']; ?></td>
