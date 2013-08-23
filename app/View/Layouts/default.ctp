@@ -74,7 +74,8 @@
         <hr>
 
 		<footer>
-            <p>&copy; 2013 NSG with help from CakePHP and CakeStrap (Twitter Bootstrap)
+            <p><small>&copy; 2013 NSG with help from CakePHP and CakeStrap (Twitter Bootstrap)
+                </small>
             </p>
 		</footer>
 	</div>

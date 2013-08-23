@@ -1,71 +1,73 @@
-<?php
-/**
- *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       Cake.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
- */
-
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-?>
-<?php echo $this->Html->docType('html5'); ?> 
+<!DOCTYPE html>
 <html>
-	<head>
-		<?php echo $this->Html->charset(); ?>
-		<title>
-			<?php echo $cakeDescription ?>:
-			<?php echo $title_for_layout; ?>
-		</title>
-		<?php
-			echo $this->Html->meta('icon');
-			
-			echo $this->fetch('meta');
+<head>
+	<?php echo $this->Html->charset(). "\n\t"; ?>
+	<title>Primers Database: <?php echo $title_for_layout; ?></title>
 
-			echo $this->Html->css('bootstrap.min');
-			echo $this->Html->css('bootstrap-responsive.min');
-			echo $this->Html->css('core');
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-			echo $this->fetch('css');
-			
-			echo $this->Html->script('libs/jquery');
-			echo $this->Html->script('libs/bootstrap.min');
-			
-			echo $this->fetch('script');
-		?>
-	</head>
+    <!-- Le styles -->
+	<?php
+		echo $this->Html->css('bootstrap.min'). "\n\t";
+        echo "<style type='text/css'>
+                    body {
+                        padding-top: 60px;
+                        padding-bottom: 40px;
+                        }
+        </style>\n\t";
 
-	<body>
+		echo $this->Html->css('bootstrap-responsive.min'). "\n\n\t";
 
-		<div id="main-container">
+		echo $this->Html->meta('icon') . "\n\t";
+
+		echo $this->fetch('meta');
+
+		echo $this->Html->css('core'). "\n\t";
+
+		echo $this->fetch('css'). "\n\t";
+
+		echo $this->Html->script('libs/jquery'). "\n\t";
+		echo $this->Html->script('libs/bootstrap.min'). "\n\t";
+
+		echo $this->fetch('script'). "\n\t";
+	?>
+</head>
+
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="index.php">Primerdb</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
 		
-			<div id="header" class="container">
-				<?php echo $this->element('menu/top_menu'); ?>
-			</div><!-- #header .container -->
 			
-			<div id="content" class="container">
+		<div id="content" class="container">
 
-				<?php echo $this->Session->flash(); ?>
+			<?php echo $this->Session->flash(); ?>
 
-				<?php echo $this->fetch('content'); ?>
-			</div><!-- #header .container -->
+			<?php echo $this->fetch('content'); ?>
+		</div><!-- #header .container -->
 			
-			<div id="footer" class="container">
-				<?php //Silence is golden ?>
-			</div><!-- #footer .container -->
-			
-		</div><!-- #main-container -->
-		
-		
-	</body>
+         <hr>
 
+		 <footer>
+               <p><small>&copy; 2013 NSG with help from CakePHP and CakeStrap (Twitter Bootstrap)
+                    </small>
+               </p>
+		 </footer>
+	</div><!-- #main-container -->
+</body>
 </html>
