@@ -8,7 +8,6 @@
 <table>
     <tr>
         <th>Primer Id</th>
-        <th>Primer Name</th>
         <th>Direction</th>
         <th>Primer Seq</th>
         <th>Primer Seq Size</th>
@@ -22,8 +21,12 @@
 
     <?php foreach ($primers as $primer): ?>
     <tr>
-        <td><?php echo $primer['Primer']['id']; ?></td>
-        <td> <?php echo $this->Html->link($primer['Primer']['primer_name'], array('controller' => 'primers', 'action' => 'view', $primer['Primer']['id'])); ?> </td>
+        <td> 
+			<?php 
+				echo $this->Html->link($primer['Primer']['primer_name'], array('controller' => 'primers', 'action' => 'view', $primer['Primer']['id'])); 
+				echo " " . $this->Html->link('[edit]', array('action' => 'edit', $primer['Primer']['id']));
+			?> 
+		</td>
 		<td> <?php echo $primer['Primer']['forward_or_reverse']; ?></td>
 		<td> <?php echo $primer['Primer']['primer_seq']; ?></td>
 		<td> <?php echo $primer['Primer']['primer_seq_size']; ?></td>
