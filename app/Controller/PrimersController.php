@@ -1,5 +1,7 @@
 <?php
 class PrimersController extends AppController {
+	public $theme = "Cakestrap";
+
 	public $helpers = array('Html', 'Form', 'Session');
 	public $components = array('Session');
 
