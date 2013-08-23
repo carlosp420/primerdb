@@ -63,9 +63,6 @@
         </p>
     </div>
 
-		<div id="header" class="container">
-			<h1>Primerdb</h1>
-		</div>
 
 		<div id="content" class="container">
 
@@ -73,8 +70,13 @@
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<div id="footer">
-		</div>
+
+        <hr>
+
+		<footer>
+            <p>&copy; 2013 NSG with help from CakePHP and CakeStrap (Twitter Bootstrap)
+            </p>
+		</footer>
 	</div>
 </body>
 </html>

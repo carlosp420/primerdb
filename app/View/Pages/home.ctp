@@ -1,4 +1,1 @@
-<ul>
-    <li>primers</li>
-    <li>amplicons</li>
-</ul>
+click the buttons.
