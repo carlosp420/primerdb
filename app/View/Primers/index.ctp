@@ -5,7 +5,7 @@
 												'action' => 'add'));
 ?>
 
-<table>
+<table class="table table-striped table-bordered">
     <tr>
         <th>Primer Id</th>
         <th>Direction</th>
