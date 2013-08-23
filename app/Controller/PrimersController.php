@@ -25,7 +25,7 @@ class PrimersController extends AppController {
 		if( $this->request->is('post') ) {
 			$this->Primer->create();
 			if( $this->Primer->save($this->request->data) ) {
-				$this->Session->setFlash(__('Your primer has been saved.'));
+				$this->Session->setFlash('Your primer has been saved.', 'info');
 				return $this->redirect(array('action' => 'index'));
 			}
 			$this->Session->setFlash(__('Unable to add your primer.'));

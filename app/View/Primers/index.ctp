@@ -1,9 +1,12 @@
 <h1>Primers</h1>
 
 <?php
-	echo $this->Html->link('Add Primer', array('controller' => 'primers',
-                                                             'action' => 'add'  ));
+echo $this->Html->link('Add New Primer', array('controller' => 'primers', 'action' => 'add'),
+                                     array('class' => 'btn')
+        );
 ?>
+
+<p></p>
 
 <table class="table table-striped table-bordered">
     <tr>
