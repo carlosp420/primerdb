@@ -1,5 +1,6 @@
 <?php
 class Primer extends AppModel {
+    #public $now = "now()";
 	public $validate = array(
 			'primer_name' => array('rule' => 'notEmpty', 'required' => true),
             'forward_or_reverse' => array(
@@ -8,8 +9,8 @@ class Primer extends AppModel {
                     'message' => 'Enter either F or R'
                 )
             ),
-			'primer_seq' => array('rule' => 'notempty'),
-			'annealing_temp' => array('rule' => 'numeric', 'message' => 'only numbers allowed')
+			#'primer_seq' => array('rule' => 'notempty'),
+            #'annealing_temp' => array('rule' => 'numeric', 'message' => 'only numbers allowed'),
 	);
 }
 ?>
