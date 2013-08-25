@@ -39,8 +39,8 @@ echo $this->Html->link('Add New Primer', array('controller' => 'primers', 'actio
 		<td> <?php echo $primer['Primer']['primer_seq']; ?></td>
 		<td> <?php echo $primer['Primer']['primer_seq_size']; ?></td>
 		<td> <?php echo $primer['Primer']['annealing_temp']; ?></td>
-        <td><?php echo $primer['Primer']['date_creation']; ?></td>
-        <td><?php echo $primer['Primer']['date_modification']; ?></td>
+        <td><?php echo $primer['Primer']['created']; ?></td>
+        <td><?php echo $primer['Primer']['modified']; ?></td>
         <td><?php echo $primer['Primer']['notes']; ?></td>
     </tr>
     <?php endforeach; ?>

@@ -5,7 +5,7 @@
 	?> 
 </h1>
 
-<p><small>Created: <?php echo $primer['Primer']['date_creation']; ?></small></p>
-<p><small>Last Modified: <?php echo $primer['Primer']['date_modification']; ?></small></p>
+<p><small>Created: <?php echo $primer['Primer']['created']; ?></small></p>
+<p><small>Last Modified: <?php echo $primer['Primer']['modified']; ?></small></p>
 
 <p><?php echo h($primer['Primer']['notes']); ?></p>

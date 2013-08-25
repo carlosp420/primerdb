@@ -11,8 +11,8 @@ create table primerdb_primers (
     primer_seq         varchar(255) DEFAULT NULL,
     primer_seq_size    TINYINT UNSIGNED DEFAULT NULL,
     annealing_temp     TINYINT UNSIGNED DEFAULT NULL,
-    date_creation      DATETIME DEFAULT NULL,
-    date_modification  DATETIME DEFAULT NULL,
+    created            DATETIME DEFAULT NULL,
+    modified           DATETIME DEFAULT NULL,
 	notes              TEXT DEFAULT NULL,
     timestamp          DATETIME NOT NULL default '0000-00-00 00:00:00'
 ) default character set = utf8;
@@ -28,8 +28,8 @@ create table primerdb_amplicon (
     amplicon_size     TINYINT UNSIGNED DEFAULT NULL,
     pcr_program       varchar(255) DEFAULT NULL,
 	amplified         varchar(255) DEFAULT NULL,
-    date_creation     DATETIME DEFAULT NULL,
-    date_modification DATETIME DEFAULT NULL,
+    created           DATETIME DEFAULT NULL,
+    modified          DATETIME DEFAULT NULL,
 	notes             TEXT DEFAULT NULL,
     timestamp         DATETIME NOT NULL default '0000-00-00 00:00:00'
 ) default character set = utf8;
