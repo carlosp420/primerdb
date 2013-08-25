@@ -8,7 +8,7 @@ echo $this->Html->link('Add New Primer', array('controller' => 'primers', 'actio
 
 <p></p>
 
-<table class="table table-striped table-bordered">
+<table class="table table-striped table-bordered table-hover">
     <tr>
         <th>Primer Id</th>
         <th>Direction</th>
