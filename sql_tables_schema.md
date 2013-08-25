@@ -27,7 +27,6 @@ reverse_primer -> eg HCO
 amplicon_size ->
 amplified -> yes/no/not yet tested 
 pcr_program -> eg 40CYC50
-amplified -> yes/no
 notes -> details about what was tried
 date_creation ->
 date_modification ->

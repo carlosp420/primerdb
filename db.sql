@@ -17,7 +17,7 @@ create table primerdb_primers (
     timestamp          DATETIME NOT NULL default '0000-00-00 00:00:00'
 ) default character set = utf8;
 
-create table primerdb_amplicon (
+create table primerdb_amplicons (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id),
     gene_code         varchar(255) DEFAULT NULL,
