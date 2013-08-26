@@ -12,14 +12,14 @@ class AmpliconsController extends AppController {
 
 	public function view($id = null) {
 		if(!$id) {
-			throw new NotFoundException(__('Invalid primer'));
+			throw new NotFoundException(__('Invalid amplicon'));
 		}
 
-		$primer = $this->Primer->findById($id);
-		if(!$primer) {
-			throw new NotFoundException(__('Invalid primer'));
+		$amplicon = $this->Amplicon->findById($id);
+		if(!$amplicon) {
+			throw new NotFoundException(__('Invalid amplicon'));
 		}
-		$this->set('primer', $primer);
+		$this->set('amplicon', $amplicon);
 	}
 
 	public function add() {
@@ -35,25 +35,25 @@ class AmpliconsController extends AppController {
 
 	public function edit( $id = null) {
 		if( !$id ) {
-			throw new NotFoundException(__('Invalid primer'));
+			throw new NotFoundException(__('Invalid amplicon'));
 		}
 
-		$primer = $this->Primer->findById($id);
-		if( !$primer ) {
-			throw new NotFoundException(__('Invalid primer'));
+		$amplicon = $this->Amplicon->findById($id);
+		if( !$amplicon ) {
+			throw new NotFoundException(__('Invalid amplicon'));
 		}
 
 		if( $this->request->is('post') || $this->request->is('put')) {
-			$this->Primer->id = $id;
-			if( $this->Primer->save($this->request->data)) {
-				$this->Session->setFlash('Your primer has been updated.', 'success');
+			$this->Amplicon->id = $id;
+			if( $this->Amplicon->save($this->request->data)) {
+				$this->Session->setFlash('Your amplicon has been updated.', 'success');
 				return $this->redirect(array('action' => 'index'));
 			}
-			$this->Session->setFlash('Unable to update your primer.', 'error');
+			$this->Session->setFlash('Unable to update your amplicon.', 'error');
 		}
 
 		if( !$this->request->data ) {
-			$this->request->data = $primer;
+			$this->request->data = $amplicon;
 		}
 	}
 
@@ -62,8 +62,8 @@ class AmpliconsController extends AppController {
 			throw new MethodNotAllowedException();
 		}
 
-		if( $this->Primer->delete($id) ) {
-			$this->Session->setFlash('The primer ' . h($id) . ' has been deleted.', 'info');
+		if( $this->Amplicon->delete($id) ) {
+			$this->Session->setFlash('The amplicon ' . h($id) . ' has been deleted.', 'info');
 			return $this->redirect(array('action' => 'index'));
 		}
 	}
