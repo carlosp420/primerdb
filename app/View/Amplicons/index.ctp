@@ -9,8 +9,8 @@ echo $this->Html->link('Add New Amplicon', array('controller' => 'amplicons', 'a
 
 <table class="table table-striped table-bordered table-hover">
     <tr>
-        <th>Gene Code</th>
         <th>Amplicon name</th>
+        <th>Gene Code</th>
         <th>Forward primer</th>
         <th>Reverse primer</th>
         <th>Amplicon size</th>
@@ -25,17 +25,17 @@ foreach( $amplicons as $amplicon ) {
     echo "<tr>";
 
     # amplicon name with links to edit and delete
-    echo "<td>" . $this->Html->link($amplicon['Amplicon']['gene_code'], array(
+    echo "<td>" . $this->Html->link($amplicon['Amplicon']['amplicon_name'], array(
         'controller' => 'amplicons',
         'action' => 'view', 
-        $amplicon['Amplicon']['gene_code']),
+        $amplicon['Amplicon']['amplicon_name']),
         array(
             'title' => 'View amplicon'));
     echo " ";
     echo $this->Html->link('', array(
         'controller' => 'amplicons',
         'action' => 'edit',
-        $amplicon['Amplicon']['gene_code']),
+        $amplicon['Amplicon']['amplicon_name']),
         array(
             'class' => 'icon-edit',
             'title' => 'edit'
@@ -45,7 +45,7 @@ foreach( $amplicons as $amplicon ) {
     echo $this->Form->postLink('', array(
         'controller' => 'amplicons',
         'action' => 'delete',
-        $amplicon['Amplicon']['gene_code']),
+        $amplicon['Amplicon']['amplicon_name']),
         array(
             'class' => 'icon-remove',
             'title' => 'remove',
@@ -54,7 +54,7 @@ foreach( $amplicons as $amplicon ) {
     );
     echo "</td>";
 
-    echo "<td>" . $amplicon['Amplicon']['amplicon_name'] . "</td>";
+    echo "<td>" . $amplicon['Amplicon']['gene_code'] . "</td>";
     echo "<td>" . $amplicon['Amplicon']['forward_primer'] . "</td>";
     echo "<td>" . $amplicon['Amplicon']['reverse_primer'] . "</td>";
     echo "<td>" . $amplicon['Amplicon']['amplicon_size'] . "</td>";
