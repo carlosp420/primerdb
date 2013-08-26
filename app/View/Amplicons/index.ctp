@@ -28,14 +28,14 @@ foreach( $amplicons as $amplicon ) {
     echo "<td>" . $this->Html->link($amplicon['Amplicon']['amplicon_name'], array(
         'controller' => 'amplicons',
         'action' => 'view', 
-        $amplicon['Amplicon']['amplicon_name']),
+        $amplicon['Amplicon']['id']),
         array(
             'title' => 'View amplicon'));
     echo " ";
     echo $this->Html->link('', array(
         'controller' => 'amplicons',
         'action' => 'edit',
-        $amplicon['Amplicon']['amplicon_name']),
+        $amplicon['Amplicon']['id']),
         array(
             'class' => 'icon-edit',
             'title' => 'edit'
@@ -45,7 +45,7 @@ foreach( $amplicons as $amplicon ) {
     echo $this->Form->postLink('', array(
         'controller' => 'amplicons',
         'action' => 'delete',
-        $amplicon['Amplicon']['amplicon_name']),
+        $amplicon['Amplicon']['id']),
         array(
             'class' => 'icon-remove',
             'title' => 'remove',
